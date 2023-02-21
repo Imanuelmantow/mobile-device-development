@@ -1,64 +1,43 @@
-// // Spread Operator membuka array
-//  let numbers = [1, 2, 3, 4, 5];
-
-// //  console.log(numbers);
-// //  console.log(...numbers);
-
-// // 1. duplikasi array
-// let numbers2 = [...numbers];
-// number.push(6);
-// console.log(numbers2);
-// menambahkan objek
-// let john = {
-//     fullname: "John Doe",
-//     age: 33,
-//     address: "Manado",
-// };
-
-// john = {
-//     ...john,
-//     job: "Teacher",
-// };
-
-// console.log(john);
-
-// mengabungkan objek
-// let obj1 = {
-//     a: 1,
-//     b: 2,
-// };
-// let obj2 = {
-//     c: 3,
-//     d: 4,
-// };
-
-// let combobj = {
-//     ...obj1,
-//     ...obj2,
-// };
-// console.log(combobj);
-
-// Destructuring
-
-// let numbers = [1, 2, 3, 4, 5];
-
-// let [a, b, c, d, e] = numbers;
-// let [, x, ,y] = numbers;
-// console.log(a);
-// console.log(x, y);
-
-// destructuring objek
-
-let john = {
-    fullname: "John doe",
-    age: 33,
+// String literal
+let John = {
+    fullname: 'john doe',
+    age: 35,
     address: "Manado",
-};
-// let { fullname, age, address } = john;
-// console.log(fullname, age, address);
 
-let ucapkansalam = ({fullname}) => {
-    let kalimat = `halo nama saya ${fullname}`;
-    console.log(kalimat);
 };
-ucapkansalam(john);
+
+let kalimat5 = "Hallo, nama saya" + John.fullname + ", umur saya" + John.age + " tahun, dan sata tinggal di " + John.address;
+
+let kalimat6 = `Hallo, nama saya ${John.fullname}, umur saya ${John.age}, tahun dan saya tinggal di ${John.address}`
+// console.log(kalimat6);
+
+// arrow function
+
+const greetings = () => {
+    return `helllo world`;
+};
+let result = greetings();
+// console.log(result);
+
+let numbers = [1, 2, 3, 4, 5]
+
+let output = numbers.map ((value) => value + 5);
+// console.log(output);
+
+// default parameter
+
+const login = (username, password = "12345") => {
+    return `Username = ${ username}, Password = ${password}`;
+};
+let output2 = login("johndoe", "12345");
+// console.log(output2);
+
+// rest parameter dan spread operator
+// rest parameter
+
+const penjumlahanArray = (a, b, c, ...params) => {
+    let result = params.map((value) => value);
+    return result;
+
+};
+console.log(penjumlahanArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11));
