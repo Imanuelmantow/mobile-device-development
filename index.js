@@ -1,43 +1,66 @@
-// String literal
-let John = {
-    fullname: 'john doe',
-    age: 35,
-    address: "Manado",
+//Array
+/*let john = ["john", "doe", 35, true, [80, 90, 100]];
+john[2] = 40;
+console.log(john[john.length -1]);
+console.log(john.join("*"));
 
-};
+john.pop();
+console.log(john);
 
-let kalimat5 = "Hallo, nama saya" + John.fullname + ", umur saya" + John.age + " tahun, dan sata tinggal di " + John.address;
+john.push("selamat pagi");
+console.log(john);
 
-let kalimat6 = `Hallo, nama saya ${John.fullname}, umur saya ${John.age}, tahun dan saya tinggal di ${John.address}`
-// console.log(kalimat6);
+john.shift();
+john.unshift("selamat pagi");
+console.log(john);*/
 
-// arrow function
+//object
 
-const greetings = () => {
-    return `helllo world`;
-};
-let result = greetings();
-// console.log(result);
+/*let john = {
+    firstName = "John",
+    lasrtName = "doe",
+    age = 35,
+    isMarried = true,
+    grade = [80, 90, 100]
 
-let numbers = [1, 2, 3, 4, 5]
+    }*/
 
-let output = numbers.map ((value) => value + 5);
-// console.log(output);
+let student = [
+   {
+       fullname: "John",
+       age: 25,
+       address: "manado",
+   },
+   {
+       fullname: "bob",
+       age: 24,
+       address: "minut"
+   },
+   {
+       fullname:"jane",
+       age: 23,
+       address: "minahasa",
+   }
 
-// default parameter
+]
 
-const login = (username, password = "12345") => {
-    return `Username = ${ username}, Password = ${password}`;
-};
-let output2 = login("johndoe", "12345");
-// console.log(output2);
+// student.forEach(function (value) {
+//     console.log(value.fullname);
+// });
 
-// rest parameter dan spread operator
-// rest parameter
+// let studentNames = student.map(function(value){
+//     return value.fullname;
+// })
 
-const penjumlahanArray = (a, b, c, ...params) => {
-    let result = params.map((value) => value);
-    return result;
+// console.log(studentNames);
 
-};
-console.log(penjumlahanArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11));
+// let filterstudent = student.filter(function(value){
+//     return value.fullname === "bob";
+// });
+// console.log(filterstudent);
+
+let filterstudent = student.filter(function(value){
+    return value.age >= 24;
+});
+console.log(filterstudent);
+
